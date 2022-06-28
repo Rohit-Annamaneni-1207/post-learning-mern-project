@@ -20,7 +20,7 @@ const Dashboard = (props) =>{
     </form>
     {props.scheduleList.map((schedule)=>{
             console.log(schedule)
-            return(<Schedule_card key={schedule._id} schedule={schedule} delete={props.deleteSchedule}/>)
+            return(<Schedule_card key={schedule._id} handleEmail = {props.handleEmail} schedule={schedule} delete={props.deleteSchedule}/>)
     })}
     </div>
     );

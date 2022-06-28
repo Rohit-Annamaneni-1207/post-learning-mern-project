@@ -43,6 +43,21 @@ async function axiosPostRegister(email, pwd) // restricted word await showing up
     return response.data;
 }
 
+async function handleEmail()
+{
+  const recipient = document.getElementById('recipient').value;
+
+  console.log(recipient);
+
+  await axios({
+    method: 'post',
+    url: "http://localhost:5000/sendEmail", 
+    data: {
+      recipient: recipient
+    }
+  }).then((response)=>{window.open(response.data.preview_url, '_blank');});
+}
+
 // var crypto = require("crypto");
 
 function App() {
@@ -192,7 +207,7 @@ function App() {
 
     <Routes>
 
-      <Route path = "/" exact = {true} element={ <Dashboard token={token} id={id} handleUnload={handleUnload} handleNewSchedule={handleNewSchedule} scheduleList={userSchedules} deleteSchedule={delete_schedule}/>}>
+      <Route path = "/" exact = {true} element={ <Dashboard token={token} id={id} handleUnload={handleUnload} handleNewSchedule={handleNewSchedule} handleEmail = {handleEmail} scheduleList={userSchedules} deleteSchedule={delete_schedule}/>}>
       </Route>
 
       <Route path = "/register" exact = {true} element={ <Navigate to="/"/> }>
