@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 const User = require('../Schemas/Users');
 
-const url = "mongodb+srv://Rohit_Annamaneni:greatboy@cluster0.zxjmn.mongodb.net/?retryWrites=true&w=majority";
-
+// const url = "mongodb+srv://Rohit_Annamaneni:greatboy@cluster0.zxjmn.mongodb.net/?retryWrites=true&w=majority";
+const url = "mongodb+srv://Rohit_Annamaneni:greatboy@cluster0.0jccdrl.mongodb.net/test"
 mongoose.connect(url).then(()=>{console.log('connected')}).catch((err)=>{console.log(err)});
 
 const createUser = async (req, res, next)=>{

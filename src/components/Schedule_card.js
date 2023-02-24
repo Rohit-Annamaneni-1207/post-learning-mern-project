@@ -3,7 +3,7 @@ import React from 'react'
 const Schedule_card = (props)=>{
     return (
 
-    <div className="card" style={{width: "18rem"}}>
+    <div className="card" style={{width: "18rem", display:"inline-block"}}>
   <div className="card-body">
     <h5 className="card-title">{props.schedule.date}</h5>
     <h6 className="card-subtitle mb-2 text-muted">{props.schedule.time}</h6>

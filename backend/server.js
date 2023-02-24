@@ -13,6 +13,8 @@ const createSchedule = require("./DbScripts/manageSchedules").createSchedule;
 const userSchedules = require("./DbScripts/manageSchedules").userSchedules;
 const deleteSchedule = require("./DbScripts/manageSchedules").deleteSchedule;
 
+const PORT = process.env.port || 5000;
+
 const nodemailer = require("nodemailer");
 
 const sendEmail = async (req, res, next)=>{
@@ -76,4 +78,4 @@ app.post("/delete_schedule", deleteSchedule);
 
 app.post("/sendEmail", sendEmail);
 
-app.listen(5000);
+app.listen(PORT);

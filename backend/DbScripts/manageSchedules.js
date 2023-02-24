@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
 const Schedule = require('../Schemas/Schedules');
 
-const url = "mongodb+srv://Rohit_Annamaneni:greatboy@cluster0.zxjmn.mongodb.net/?retryWrites=true&w=majority";
+// const url = "mongodb+srv://Rohit_Annamaneni:greatboy@cluster0.zxjmn.mongodb.net/?retryWrites=true&w=majority";
+const url = "mongodb+srv://Rohit_Annamaneni:<password>@cluster0.0jccdrl.mongodb.net/test"
+
 
 mongoose.connect(url).then(()=>{console.log('connected')}).catch((err)=>{console.log(err)});
 

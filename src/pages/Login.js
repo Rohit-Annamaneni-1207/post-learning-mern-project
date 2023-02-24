@@ -13,7 +13,9 @@ const Login = (props) =>{
         <br />
         <button type="submit" value="submit">Submit</button>
     </form> */}
-
+<h1>Schedule Management and Creation Application</h1>
+<h3><u>Login</u></h3>
+<br></br>
 <form onSubmit={props.loginHandler}>
   <div className="mb-3">
     <label htmlFor="email" className="form-label">Email address</label>
