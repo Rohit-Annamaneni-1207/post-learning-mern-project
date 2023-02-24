@@ -12,7 +12,7 @@ const axios = require('axios').default;
 
 async function axiosGetLogin(email, pwd) // restricted word await showing up on async func
 {
-  const response = await axios.get('http://localhost:5000/login', {
+  const response = await axios.get('http://localhost:3030/login', {
       params: {
         email: email,
         pwd: pwd
@@ -34,7 +34,7 @@ async function axiosPostRegister(email, pwd) // restricted word await showing up
 
   const response = await axios({
     method: 'post',
-    url: "http://localhost:5000/register", 
+    url: "http://localhost:3030/register", 
     data: data}
     ).catch((err)=>{console.log(err)});
 
@@ -51,7 +51,7 @@ async function handleEmail()
 
   await axios({
     method: 'post',
-    url: "http://localhost:5000/sendEmail", 
+    url: "http://localhost:3030/sendEmail", 
     data: {
       recipient: recipient
     }
@@ -91,7 +91,7 @@ function App() {
 
       axios({
         method: 'post',
-        url: "http://localhost:5000/assignToken", 
+        url: "http://localhost:3030/assignToken", 
         data: data}
         );
 
@@ -124,13 +124,13 @@ function App() {
 
       axios({
         method: 'post',
-        url: "http://localhost:5000/assignToken", 
+        url: "http://localhost:3030/assignToken", 
         data: data}
         );
 
       axios({
         method: "get",
-        url: "http://localhost:5000/userSchedules",
+        url: "http://localhost:3030/userSchedules",
         params: {user_id: tempid}
       }).then((response)=>{setSchedules(response.data)});
 
@@ -146,7 +146,7 @@ function App() {
 
     axios({
       method: 'post',
-      url: "http://localhost:5000/removeToken",
+      url: "http://localhost:3030/removeToken",
       data: data
     }).then((result)=>{console.log(result)});
 
@@ -168,7 +168,7 @@ function App() {
 
     axios({
       method: 'post',
-      url: "http://localhost:5000/new_schedule",
+      url: "http://localhost:3030/new_schedule",
       data: data
     }).then((result)=>{console.log(result.data);
         const newScheduleList = [...userSchedules, result.data];
@@ -183,7 +183,7 @@ function App() {
 
     axios({
       method: 'post',
-      url: "http://localhost:5000/delete_schedule",
+      url: "http://localhost:3030/delete_schedule",
       data: {schedule_id: schedule_id}
     }).then((result)=>{console.log(result)});
   }
