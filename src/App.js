@@ -12,7 +12,7 @@ const axios = require('axios').default;
 
 async function axiosGetLogin(email, pwd) // restricted word await showing up on async func
 {
-  const response = await axios.get('http://localhost:8000/login', {
+  const response = await axios.get(':8000/login', {
       params: {
         email: email,
         pwd: pwd
@@ -34,7 +34,7 @@ async function axiosPostRegister(email, pwd) // restricted word await showing up
 
   const response = await axios({
     method: 'post',
-    url: "http://localhost:8000/register", 
+    url: " :8000/register", 
     data: data}
     ).catch((err)=>{console.log(err)});
 
@@ -51,7 +51,7 @@ async function handleEmail()
 
   await axios({
     method: 'post',
-    url: "http://localhost:8000/sendEmail", 
+    url: ":8000/sendEmail", 
     data: {
       recipient: recipient
     }
@@ -91,7 +91,7 @@ function App() {
 
       axios({
         method: 'post',
-        url: "http://localhost:8000/assignToken", 
+        url: ":8000/assignToken", 
         data: data}
         );
 
@@ -124,13 +124,13 @@ function App() {
 
       axios({
         method: 'post',
-        url: "http://localhost:8000/assignToken", 
+        url: ":8000/assignToken", 
         data: data}
         );
 
       axios({
         method: "get",
-        url: "http://localhost:8000/userSchedules",
+        url: ":8000/userSchedules",
         params: {user_id: tempid}
       }).then((response)=>{setSchedules(response.data)});
 
@@ -146,7 +146,7 @@ function App() {
 
     axios({
       method: 'post',
-      url: "http://localhost:8000/removeToken",
+      url: ":8000/removeToken",
       data: data
     }).then((result)=>{console.log(result)});
 
@@ -168,7 +168,7 @@ function App() {
 
     axios({
       method: 'post',
-      url: "http://localhost:8000/new_schedule",
+      url: ":8000/new_schedule",
       data: data
     }).then((result)=>{console.log(result.data);
         const newScheduleList = [...userSchedules, result.data];
@@ -183,7 +183,7 @@ function App() {
 
     axios({
       method: 'post',
-      url: "http://localhost:8000/delete_schedule",
+      url: ":8000/delete_schedule",
       data: {schedule_id: schedule_id}
     }).then((result)=>{console.log(result)});
   }
